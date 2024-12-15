@@ -1,0 +1,51 @@
+
+<div class="col-12 mt-3">
+    <h1>Proximos eventos</h1>
+</div>
+
+<!--
+<div class="filter-box mb-4">
+    <div class="filter-chip" [ngClass]="{'active': this.tagsMarcados.indexOf(tag)>=0}" (click)="selectUserTag(tag)"
+      *ngFor="let tag of tags">
+      #{{tag}}
+    </div>
+  </div>
+  
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let post of eventsFiltrados">
+    <app-card [data]="events"></app-card>
+  </div>
+</div>
+
+<p *ngFor="let events of events">
+    <strong>{{events.title}}</strong>
+    <br>{{events.adress}}  | {{events.city}}, {{events.country}}
+    <br>{{events.description}}
+    <br><strong>{{events.date}} | {{events.price}}</strong>
+    <br><a href="{{events.url}}" target="_blank">Compra ahora</a>
+</p>
+  -->
+  <a href="/evento-form/create" class="btn btn-primary">Agregar nuevo</a>
+  <table class="table-stripped table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <td>Nombre</td>
+        <td>Fecha</td>
+        <td>Ubicación</td>
+        <td>Descripción</td>
+        <td>Precio</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{event.title}}</td>
+        <td>{{event.date}}</td>
+        <td>{{event.adress}} | {{event.city}}, {{event.country}}</td>
+        <td>{{event.description}}</td>
+        <td>{{event.price}}</td>
+        <td>
+          <a [routerLink]="'/evento-form/create/{{event.id}}'">Ver</a><br>
+          <a [routerLink]="'/evento-form/update/{{event.id}}'">Editar</a><br>
+          <a [routerLink]="'/evento-form/delete/{{event.id}}'">Eliminar</a>          
+        </td>
+      </tr>

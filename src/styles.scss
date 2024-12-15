@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "spotify-light";
+  src: url("/fonts/CircularSpotifyText-Light.otf");
+}
+@font-face {
+  font-family: "spotify-bold";
+  src: url("/fonts/CircularSpotifyText-Bold.otf");
+}
+
+/* Definir Variables para el Sistema de Diseño */
+:root {
+  /* Colores de la paleta Spotify */
+  --color-dark-bg: #191414;
+  --color-dark-bg-alt: #121212;
+  --color-light-text: #ffffff;
+  --color-muted-text: #b3b3b3;
+  --color-green-accent: #1db954;
+
+  /* Tipografía */
+  --font-primary-light: "spotify-light", sans-serif;
+  --font-primary-bold: "spotify-bold", sans-serif;
+
+  /* Espaciadores */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 32px;
+
+  /* Bordes */
+  --border-radius: 8px;
+  --border-color: #282828;
+
+  /* Otros */
+  --transition-default: 0.3s ease;
+}
+* {
+  color: var(--color-light-text);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: "spotify-light";
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #424242;
+  height: 130vh;
+}
+.btn {
+  border-radius: 20px !important;
+}
+.btn-primary {
+  background: #121212 ; 
+  border-color: #121212; 
+  display: inline-flex;
+  
+}
+
+.form-control{
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  outline-color: transparent !important;
+  color: #424242 !important;
+  background: transparent !important;
+  outline-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  &:focus{
+    color: #3f2a2b !important;
+    background: transparent !important;
+    outline-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+.form-control-group{
+  padding: 20px 30px;
+  border-radius: 25px;
+  position: relative;
+  border: 1px solid #424242;
+  margin: 20px 100px;
+  background-color: #e3dfdf;
+  box-shadow: 5px 0px 15px 0px #000;
+
+
+  label{
+    background-color: #282828 !important;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background: var(--color-dark-bg);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000 !important;
+  }
+
+
+}

@@ -1,0 +1,62 @@
+<h1>Evento form</h1>
+
+<div class="card text-white bg-dark mb-3" *ngIf="action==='read'">
+    <div class="card-body">
+        <h5 class="card-title">{{data.title}}</h5>
+        <p class="card-text">{{data.country}}, {{data.city}}</p>
+        <p class="card-text">{{data.date}}</p>
+    </div>
+</div>
+
+<div *ngIf="action!=='read'">
+    <form [formGroup]="form" (ngSubmit)="transaction()">
+        <div class="form-control-group">
+            <label for="">Titulo</label>
+            <input 
+            formControlName="title" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Descripción</label>
+            <input 
+            formControlName="description" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Imagen</label>
+            <input 
+            formControlName="image" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Fecha</label>
+            <input 
+            formControlName="date" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Precio</label>
+            <input 
+            formControlName="price" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">País</label>
+            <input 
+            formControlName="country" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Ciudad</label>
+            <input 
+            formControlName="city" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Dirección</label>
+            <input 
+            formControlName="adress" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+            <label for="">Tickets en stock</label>
+            <input 
+            formControlName="stockTickets" class="form-control" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Guardar</button>
+
+    </form>
+</div>

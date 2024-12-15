@@ -1,0 +1,97 @@
+.app-menu {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-dark-bg);
+  box-shadow: 0px 2px 7px 1px #000;
+
+  .navbar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 4px;
+    color: inherit;
+    text-decoration: none;
+    span {
+      margin-top: 4px;
+      font-size: 9px;
+    }
+    &.active {
+      span,
+      i {
+        color: var(--color-green-accent) !important;
+      }
+    }
+  }
+}
+.app-wrapper{
+  max-height: calc(100% - 60px);
+}
+.container-fluid {
+  padding: 0;
+}
+
+.app-navbar {
+  background-color: #323131;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.app-header-btn-menu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #ddd;
+  }
+}
+
+.app-menu {
+  display: flex;
+  flex-direction: row;
+  background-color: #575757;
+  padding: 1rem;
+}
+
+
+
+.btn-primary {
+  background: #444 ; 
+  border-color: #c49a80; 
+}
+
+.navbar-btn {
+  color: #fff;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #555;
+    color: #ddd;
+  }
+}
+
+.row {
+  padding: 1rem;
+}
+
+
+

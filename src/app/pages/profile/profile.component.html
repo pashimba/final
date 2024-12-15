@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-12 mt-3 mb-3">
+    <h1>PERFIL</h1>
+    <p><strong>Nombre:</strong> {{auth.profile?.name}}</p>
+    <p><strong>Email:</strong> {{auth.profile?.email}}</p>
+    <p><strong>Phone</strong> {{auth.profile?.phone}}</p>
+    <p><strong>UID</strong> {{auth.profile?.id}}</p>
+
+  </div>
+  <div class="col-12 mb-3">
+    <button class="btn btn-primary" [routerLink]="'/edit-profile'">Editar perfil</button>
+    <button class="btn btn-primary" [routerLink]="'/new-post'">Subir Post</button>
+    <button class="btn btn-danger" (click)="auth.logout()">Cerrar sesion</button>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let post of postsFiltrados">
+    <app-card [data]="post"></app-card>
+  </div>
+
+</div>

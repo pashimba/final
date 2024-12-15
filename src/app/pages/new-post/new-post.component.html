@@ -1,0 +1,21 @@
+<!-- <p>el id del usuario logueado es: {{auth.profile?.id}}</p> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col mt-3">
+      <h1>Post</h1>
+      <form [formGroup]="formulario" (ngSubmit)="storePost()">
+        <img style="width: 300px; margin-bottom: 30px;display: block;" *ngIf="id" src="{{post?.image}}" alt="">
+        <div class="form-control-group">
+          <label for="">Imagen</label>
+          <input formControlName="image" class="form-control" type="text">
+        </div>
+        <div class="form-control-group">
+          <label for="">¿Qué estas pensando?</label>
+          <input formControlName="content" class="form-control" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">{{this.id?'Editar post': 'Publicar Post'}}</button>
+      </form>
+    </div>
+  </div>
+</div>
+

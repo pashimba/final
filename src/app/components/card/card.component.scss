@@ -1,0 +1,14 @@
+.card{
+  background: transparent;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 0;
+  box-shadow: -1px -1px 7px 0px black;
+  .card-img-top{
+    border-radius: 0;
+    object-fit: cover;
+    min-height: 226px;
+    max-height: 226px;
+
+  }
+}

@@ -1,0 +1,20 @@
+<div class="card">
+  <img class="card-img-top" src="{{data.image}}" alt="Card image cap" routerLink="/view-post/{{data.id}}">
+
+  <div class="card-body">
+    <h5 class="card-title" routerLink="/view-profile/{{data.userId}}">User: {{user?.name}}</h5>
+    <p class="card-text"><span style="padding: 3px; background: grey; margin-right: 4px; border-radius: 8px" *ngFor="let tag of data.userTags">#{{tag}}</span> </p>
+    <p class="card-text">{{data.content}}</p>
+
+    <div [ngClass]="{'btn-primary': checkLike()===false,
+    'btn-danger': checkLike()===true}" class="btn m-2" (click)="setLike()">
+      <i *ngIf="checkLike()===false" class="fa-regular fa-heart"></i>
+      <i *ngIf="checkLike()===true" class="fa-solid fa-heart"></i>
+    </div>
+    <div class="btn-primary btn" (click)="toggleInput = !toggleInput">Comentar</div>
+    <div class="form-group" *ngIf="toggleInput===true">
+      <label for="">Comentar</label>
+      <input type="text" class="form-control" placeholder="Agrega un comentario">
+    </div>
+  </div>
+</div>

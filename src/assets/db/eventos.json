@@ -1,0 +1,36 @@
+[
+    {
+      "eventName": "Explorando la Naturaleza",
+      "description": "Acompáñanos en una experiencia inolvidable explorando la naturaleza.",
+      "image": "https://example.com/nature.jpg",
+      "location": "Parque Nacional Madidi, Bolivia",
+      "eventDate": "2024-12-01T09:00:00.000Z",
+      "userId": "user123",
+      "userTags": ["nature", "adventure", "exploration"],
+      "likes": []
+
+    },
+    {
+      "eventName": "Día Soleado al Aire Libre",
+      "description": "Un evento para disfrutar del clima soleado y actividades al aire libre.",
+      "image": "https://example.com/sunny-day.jpg",
+      "location": "Playa de Copacabana, Brasil",
+      "eventDate": "2024-12-15T14:00:00.000Z",
+      "userId": "user456",
+      "userTags": ["sunny", "beach", "fun"],
+      "likes": ["user123"]
+
+    },
+    {
+      "eventName": "Recuerdos de la Selva",
+      "description": "Descubre la magia de la selva y su increíble biodiversidad.",
+      "image": "https://example.com/jungle.jpg",
+      "location": "Reserva de la Biosfera del Manu, Perú",
+      "eventDate": "2024-12-20T08:00:00.000Z",
+      "userId": "user789",
+      "userTags": ["jungle", "wildlife", "nature"],
+      "likes": []
+
+    }
+  ]
+  
