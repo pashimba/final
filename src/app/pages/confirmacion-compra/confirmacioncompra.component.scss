@@ -1,0 +1,141 @@
+.confirmacion-compra {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #af9191;
+    border-radius: 5px;
+    background-color: #fff;
+
+    h2 {
+      margin: 0.5rem 10px;
+      font-size: 1rem;
+      color: #000000;
+    }
+
+    p {
+      margin: 0.5rem 10px;
+      color: #422b2b;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  .total-carrito {
+    margin-top: 2rem;
+    text-align: right;
+
+    h3 {
+      color: #000000;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .metodo-pago,
+  .comprobante-pago {
+    margin: 1.5rem 0;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #3f3939;
+    }
+
+    select,
+    input[type='file'] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+  }
+
+  .error {
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 0.9rem;
+  }
+
+  button {
+    display: inline-block;
+    margin: 1rem 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d400ff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #010810;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    &.btn-danger {
+      background-color: #dc3545;
+
+      &:hover {
+        background-color: #a71d2a;
+      }
+    }
+
+    &.btn-success {
+      background-color: #c55b14;
+
+      &:hover {
+        background-color: #d9a32f;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .total-carrito {
+      text-align: center;
+    }
+  }
+}

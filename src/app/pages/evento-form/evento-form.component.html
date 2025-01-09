@@ -1,0 +1,186 @@
+<div class="evento-dashboard">
+  <h1>Gestión de Eventos</h1>
+
+ 
+  <button class="btn btn-dark toggle-button" (click)="toggleForm()">
+    {{ showForm ? 'Cerrar Formulario' : 'Crear/Editar Evento' }}
+  </button>
+
+  <div *ngIf="showForm" class="form-container shadow p-4 rounded">
+    <h2 class="form-title">
+      {{ action === 'create' ? 'Crear Evento' : 'Editar Evento' }}
+    </h2>
+    <form [formGroup]="form" (ngSubmit)="transaction()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="name" class="form-label">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            id="name"
+            placeholder="Nombre del evento"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="photoURL" class="form-label">URL de Imagen</label>
+          <input
+            type="url"
+            class="form-control"
+            formControlName="photoURL"
+            id="photoURL"
+            placeholder="URL de la imagen"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea
+          class="form-control"
+          formControlName="description"
+          id="description"
+          rows="3"
+          placeholder="Descripción del evento"
+        ></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="country" class="form-label">País</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="country"
+            id="country"
+            placeholder="País"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="city" class="form-label">Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="city"
+            id="city"
+            placeholder="Ciudad"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="location" class="form-label">Ubicación</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="location"
+            id="location"
+            placeholder="Ubicación exacta"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="date" class="form-label">Fecha</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="date"
+            id="date"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="price" class="form-label">Precio ($)</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="price"
+            id="price"
+            placeholder="Precio"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="discount" class="form-label">Descuento (%)</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="discount"
+            id="discount"
+            placeholder="Descuento"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cantidadEntradas" class="form-label">Stock de Entradas</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="cantidadEntradas"
+            id="cantidadEntradas"
+            placeholder="Cantidad disponible"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Categoría</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="category"
+          id="category"
+          placeholder="Categoría del evento"
+        />
+      </div>
+      <button type="submit" class="btn btn-success w-100">
+        {{ action === 'create' ? 'Crear Evento' : 'Actualizar Evento' }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Tabla de eventos -->
+  <div class="event-list mt-5">
+    <h2>Lista de Eventos</h2>
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Ubicación</th>
+          <th>Ciudad</th>
+          <th>País</th>
+          <th>Fecha</th>
+          <th>Precio</th>
+          <th>Descuento</th>
+          <th>Stock</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evento of eventos">
+          <td>{{ evento.name }}</td>
+          <td>{{ evento.description }}</td>
+          <td>{{ evento.location }}</td>
+          <td>{{ evento.city }}</td>
+          <td>{{ evento.country }}</td>
+          <td>{{ evento.date | date: 'shortDate' }}</td>
+          <td>${{ evento.price }}</td>
+          <td>{{ evento.discount }}%</td>
+          <td>{{ evento.cantidadEntradas }}</td>
+          <td>{{ evento.category }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm" (click)="editEvent(evento)">
+              Editar
+            </button>
+            <button
+              class="btn btn-outline-danger btn-sm"
+              (click)="deleteEvent(evento.id)"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="eventos.length === 0" class="text-center text-muted">
+      No hay eventos disponibles.
+    </p>
+  </div>
+</div>

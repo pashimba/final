@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+$color-primary: #FF6F00;   // Naranja
+$color-secondary: #000000; 
+$color-accent: #FFFFFF;    
+$color-warning: #FF9800;   
+$color-white: #FFFFFF;     
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f5f5f5;  
+  color: $color-secondary;  
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+nav[_ngcontent-ng-c2429949917] {
+  background-color: $color-primary; 
+  padding: 1em;
+}

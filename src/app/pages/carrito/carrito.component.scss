@@ -1,0 +1,135 @@
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8e8e8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family:'Quicksand', sans-serif;
+  color: #333;
+}
+
+.cart-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #424242;
+  margin-bottom: 30px;
+}
+
+
+.cart-item {
+  
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #424242;
+}
+
+.cart-item p {
+  font-size: 1rem;
+  color: #424242;
+  margin: 5px 0;
+}
+
+.cart-item-img {
+  max-width: 250px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  align-items: center;
+}
+
+
+.btn-remove {
+  background-color: transparent;
+  font-size: 1.1rem;
+  color: #d63031;
+  cursor: pointer;
+  transition:  0.3s ease;
+}
+
+.btn-remove:hover {
+  font-size: 1rem;
+  color: #c0392b;
+  border-radius: 5px;
+  border: #d61c0f solid;
+}
+
+
+.total-carrito {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f1f2f6;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+
+.cart-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger {
+  background-color: #d63031;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #e74c3c;
+}
+
+.btn-success {
+  background-color: #0984e3;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #74b9ff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.empty-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #636e72;
+}
+
+
+.precio-tachado {
+  text-decoration: line-through;
+  color: red;
+  margin-right: 8px;
+}

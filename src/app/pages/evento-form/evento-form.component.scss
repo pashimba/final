@@ -1,0 +1,43 @@
+.evento-dashboard {
+  padding: 2rem;
+  background-color: #f5f7fa;
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0b4177;
+  }
+
+  .form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #050505;
+  }
+
+  .form-container {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .toggle-button {
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+  }
+
+  table {
+    margin-top: 2rem;
+    text-align: left;
+
+    th, td {
+      padding: 0.75rem;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #124477;
+      color: #fff;
+    }
+  }
+}
