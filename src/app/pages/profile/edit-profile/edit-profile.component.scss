@@ -1,4 +1,4 @@
-@import '../../../../styles.scss'; // Importa las variables de colores
+@import '../../../../styles.scss'; 
 
 body {
   font-family: 'Quicksand', sans-serif;
@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 130vh; /* Ocupa toda la altura del viewport */
+  height: 130vh; 
 }
 
 h1 {
@@ -27,7 +27,7 @@ h1 {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif; // Aplicar la tipografía
+  font-family: 'Poppins', sans-serif; 
 }
 
 .form-group {
@@ -70,7 +70,7 @@ button[type="submit"] {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  font-family: 'Poppins', sans-serif; // Aplicar la tipografía
+  font-family: 'Poppins', sans-serif; 
 
   &:disabled {
     background-color: lighten($color-primary, 30%);

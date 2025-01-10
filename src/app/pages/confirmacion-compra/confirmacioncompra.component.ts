@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Firestore, collection, getDocs, CollectionReference, addDoc, deleteDoc, updateDoc, doc } from '@angular/fire/firestore'; // Importar addDoc y deleteDoc
+import { Firestore, collection, getDocs, CollectionReference, addDoc, deleteDoc, updateDoc, doc } from '@angular/fire/firestore'; 
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class ConfirmacionCompraComponent implements OnInit {
       
     
   
-      // Continuar si hay usuario logueado
+ 
       const userId = user.uid;
       const cartRef = collection(this.firestore, `users/${userId}/cart`) as CollectionReference;
       const snapshot = await getDocs(cartRef);
@@ -78,7 +78,7 @@ export class ConfirmacionCompraComponent implements OnInit {
     if (user) {
       const userId = user.uid;
   
-      // Verificar y mapear los datos correctamente
+     
       const compra = {
         items: this.cartItems.map(item => ({
           nombre: item.nombre || item.name || 'Sin nombre',
@@ -94,22 +94,22 @@ export class ConfirmacionCompraComponent implements OnInit {
         comprobante: this.comprobante?.name || 'Sin comprobante'
       };
   
-      // Validar datos antes de guardar
+     
       if (compra.items.some(item => item.nombre === 'Sin nombre' || item.precioTotal === 0)) {
         console.error('Error: Algunos campos del carrito están incompletos o son inválidos.');
         return;
       }
   
       try {
-        // Restablecer el estado de los eventos (addedToCart: false) **ANTES** de confirmar la compra
+        
         await this.resetAddedToCart(userId);
   
-        // Guardar la compra en Firebase
+        
         const comprasRef = collection(this.firestore, `users/${userId}/compras`) as CollectionReference;
         await addDoc(comprasRef, compra);
         console.log('Compra guardada en la base de datos');
   
-        // Limpiar el carrito
+        
         const cartRef = collection(this.firestore, `users/${userId}/cart`) as CollectionReference;
         const snapshot = await getDocs(cartRef);
         const deletePromises = snapshot.docs.map(doc => deleteDoc(doc.ref));
@@ -123,14 +123,14 @@ export class ConfirmacionCompraComponent implements OnInit {
     }
   }
   
-  // Función para restablecer addedToCart a false en Firestore
+
   private async resetAddedToCart(userId: string) {
     try {
       const cartRef = collection(this.firestore, `users/${userId}/cart`);
       const snapshot = await getDocs(cartRef);
   
       const resetPromises = snapshot.docs.map(async (docSnap) => {
-        const eventoId = docSnap.data()['eventoId']; // Acceder correctamente al eventoId
+        const eventoId = docSnap.data()['eventoId']; 
         const eventDocRef = doc(this.firestore, `events/${eventoId}`);
         await updateDoc(eventDocRef, { addedToCart: false });
       });

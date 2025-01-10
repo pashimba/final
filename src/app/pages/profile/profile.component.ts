@@ -12,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  profile: any = {}; // Garantiza que sea un objeto válido
+  profile: any = {}; 
   favorites: any[] = [];
   showFavorites: boolean = false;
 
@@ -24,18 +24,18 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     if (!this.auth.verifyIsLogued()) {
-      this.router.navigateByUrl('/login'); // Redirige al login si no está logueado
+      this.router.navigateByUrl('/login'); 
       return;
     }
     
-    // Asignar el perfil si está autenticado
+  
     this.profile = this.auth.profile || {};
     
-    // Cargar favoritos
+    
     this.loadFavorites();
   }
 
-  // Cargar lista de favoritos
+  
   async loadFavorites() {
     const currentUser = this.auth.getCurrentUser();
     if (!currentUser) {
@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
     try {
       const userId = currentUser.uid;
 
-      // Limpiar favoritos previos antes de cargar nuevos
+      
       this.favorites = [];
 
       const querySnapshot = await this.db.queryFavorites(userId);
@@ -57,12 +57,12 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  // Mostrar/Ocultar sección de favoritos
+  
   toggleFavorites() {
     this.showFavorites = !this.showFavorites;
   }
 
-  // Añadir o eliminar un favorito
+
   async toggleFavorite(evento: any) {
     const currentUser = this.auth.getCurrentUser();
     if (!currentUser) {
@@ -81,19 +81,19 @@ export class ProfileComponent implements OnInit {
         evento.isFavorite = true;
       }
 
-      // Refrescar la lista de favoritos
+
       await this.loadFavorites();
     } catch (error) {
       console.error('Error al manejar favoritos:', error);
     }
   }
 
-  // Cerrar sesión
+  
   logout() {
     this.auth.logoutUser()
       .then(() => {
-        localStorage.clear(); // Borra todos los datos del local storage
-        this.router.navigateByUrl('/login'); // Redirige al login después de cerrar sesión
+        localStorage.clear(); 
+        this.router.navigateByUrl('/login'); 
       })
       .catch(error => {
         console.error('Error al cerrar sesión:', error);

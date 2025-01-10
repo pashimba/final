@@ -21,16 +21,15 @@ export class CarritoComponent implements OnInit {
     this.cargarCarrito();
   }
 
-  // Cargar los datos del carrito
   cargarCarrito() {
     this.cartService.loadCart().then(() => {
-      this.cartItems = this.cartService.getCartItems(); // Obtiene los datos del carrito
-      this.calcularTotal(); // Calcula el total del carrito
+      this.cartItems = this.cartService.getCartItems();
+      this.calcularTotal(); 
       console.log('Elementos del carrito cargados:', this.cartItems);
-    }); // Cerramos correctamente el método
+    }); 
   }
 
-  // Vaciar el carrito
+  
   clearCart() {
     this.cartService.clearCart();
     this.cartItems = [];
@@ -38,7 +37,7 @@ export class CarritoComponent implements OnInit {
     console.log('Carrito vaciado');
   }
 
-  // Eliminar un elemento del carrito
+ 
 
   removeItem(eventoId: string) {
     if (!eventoId) {
@@ -47,8 +46,8 @@ export class CarritoComponent implements OnInit {
     }
   
     this.cartService.removeFromCart(eventoId).then(() => {
-      this.cartItems = this.cartItems.filter(item => item.eventoId !== eventoId); // Eliminar del array local
-      this.calcularTotal(); // Recalcular el total
+      this.cartItems = this.cartItems.filter(item => item.eventoId !== eventoId); 
+      this.calcularTotal(); 
       console.log(`Evento con ID: ${eventoId} eliminado del carrito`);
     }).catch(error => {
       console.error('Error al eliminar el evento del carrito:', error);
@@ -56,7 +55,6 @@ export class CarritoComponent implements OnInit {
   }
   
 
-  // Actualizar la cantidad de un ítem
   updateQuantity(eventoId: string, newQuantity: any) {
     const cantidadNumerica = Number(newQuantity);
     if (isNaN(cantidadNumerica) || cantidadNumerica < 1) {
@@ -69,7 +67,7 @@ export class CarritoComponent implements OnInit {
     console.log(`Cantidad actualizada para el evento con ID: ${eventoId}`);
   }
 
-  // Calcular el total del carrito
+  
   calcularTotal() {
     this.totalCarrito = this.cartItems.reduce((total, item) => {
       const precioUnitario = item.precioConDescuento && item.precioConDescuento < item.precio
@@ -81,9 +79,6 @@ export class CarritoComponent implements OnInit {
   }
   
   
-  
-
-  // Ir al checkout
   irACheckout() {
     console.log('Redirigiendo al checkout...');
     this.router.navigate(['/confirmacion-compra']).then(success => {

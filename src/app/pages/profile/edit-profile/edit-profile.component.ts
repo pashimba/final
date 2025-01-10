@@ -28,7 +28,7 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit() {
     if (!this.auth.isLogued) {
-      // Redirigir a la página de inicio de sesión si no está autenticado
+      
       this.router.navigateByUrl('/login');
     } else {
       this.initializeForm();
@@ -43,8 +43,8 @@ export class EditProfileComponent implements OnInit {
         nickname: [this.auth.profile?.nickname, Validators.minLength(4)],
         photoURL: [''],
         phone: [this.auth.profile?.phone],
-        password: ['', Validators.required], // Campo para la contraseña actual
-        newPassword: ['', Validators.minLength(6)] // Campo para la nueva contraseña
+        password: ['', Validators.required], 
+        newPassword: ['', Validators.minLength(6)] 
       });
     } else {
       this.profileForm = this.fb.group({
@@ -53,8 +53,8 @@ export class EditProfileComponent implements OnInit {
         nickname: ['', Validators.minLength(4)],
         photoURL: [''],
         phone: [''],
-        password: ['', Validators.required], // Campo para la contraseña actual
-        newPassword: ['', Validators.minLength(6)] // Campo para la nueva contraseña
+        password: ['', Validators.required], 
+        newPassword: ['', Validators.minLength(6)] 
       });
     }
   }

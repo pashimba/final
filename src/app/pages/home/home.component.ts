@@ -27,16 +27,16 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-     // Verificar el estado del usuario antes de llamar loadFavorites
+     
     const userCheck = setInterval(() => {
       if (this.auth.getCurrentUser()) {
         clearInterval(userCheck);
         this.loadFavorites();
       }
-    }); // Verificar cada 1 segundo
+    }); 
 
 
-    // Obtener y mostrar eventos de Firestore
+    
     this.db.fetchFirestoreCollection('events').subscribe(
       (collection: any[]) => {
         this.eventos = collection ?? [];
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
       }
     );
 
-  // Cargar favoritos al inicio
+  
   this.loadFavorites();
 }
 
@@ -118,18 +118,18 @@ export class HomeComponent implements OnInit {
   
     try {
       if (evento.isFavorite) {
-        // Eliminar de favoritos
+        
         await this.db.updateEventField(evento.id, { isFavorite: false });
         evento.isFavorite = false;
         console.log('Evento eliminado de favoritos');
       } else {
-        // Agregar a favoritos
+        
         await this.db.updateEventField(evento.id, { isFavorite: true });
         evento.isFavorite = true;
         console.log('Evento agregado a favoritos');
       }
   
-      await this.loadFavorites(); // Recargar la lista de favoritos
+      await this.loadFavorites(); 
     } catch (error) {
       console.error('Error al manejar favoritos:', error);
     }
@@ -138,19 +138,19 @@ export class HomeComponent implements OnInit {
   
   
 
-  favorites: any[] = []; // Lista para almacenar los favoritos
+  favorites: any[] = []; 
 
   async loadFavorites() {
     const retryInterval = setInterval(() => {
       const currentUser = this.auth.getCurrentUser();
   
       if (currentUser) {
-        clearInterval(retryInterval); // Detiene el reintento
+        clearInterval(retryInterval); 
         console.log('Usuario autenticado:', currentUser);
   
-        this.fetchFavorites(currentUser.uid); // Cargar favoritos
+        this.fetchFavorites(currentUser.uid);
       }
-    }, 500); // Reintenta cada 500ms
+    }, 500);
   }
   
   async fetchFavorites(userId: string) {

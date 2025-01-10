@@ -41,7 +41,7 @@ export class EventoComponent implements OnInit {
 
     const currentUser = this.auth.getCurrentUser();
     if (currentUser) {
-      this.userId = currentUser.uid; // Asignar el userId
+      this.userId = currentUser.uid; 
     } else {
       console.error('No se encontró un usuario logueado');
     }
@@ -67,7 +67,7 @@ export class EventoComponent implements OnInit {
       this.precioConDescuento =
         this.evento.price - (this.evento.price * this.evento.discount) / 100;
     } else {
-      this.precioConDescuento = this.evento.price; // Si no hay descuento, usar el precio regular
+      this.precioConDescuento = this.evento.price;
     }
   }
 

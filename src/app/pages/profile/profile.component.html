@@ -20,7 +20,7 @@
     </div>
     <h2>Configuración del perfil</h2>
 
-    <!-- Botones de perfil -->
+
     <div class="history-container">
       <button [routerLink]="['/historial-compras']" class="btn btn-secondary">Ver historial</button>
       <button (click)="toggleFavorites()" class="btn btn-secondary">Favoritos</button>
@@ -28,7 +28,7 @@
       <button (click)="logout()" class="btn btn-secondary">Cerrar Sesión</button>
     </div>
 
-    <!-- Sección de Favoritos -->
+    
     <div *ngIf="showFavorites" class="favorites-section">
       <h2>Tus Favoritos</h2>
       <div *ngIf="favorites.length > 0" class="cards-container">

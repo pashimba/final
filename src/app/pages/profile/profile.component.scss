@@ -1,4 +1,4 @@
-@import '../../../styles.scss'; // Importa las variables de colores
+@import '../../../styles.scss'; 
 
 body {
   font-family: 'Quicksand', sans-serif;
@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Ocupa toda la altura del viewport */
+  height: 100%; 
   min-height: 85vh;
 }
 
@@ -21,7 +21,7 @@ body {
   background-color: $color-white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif; // Aplicar la tipografía
+  font-family: 'Poppins', sans-serif; 
 }
 
 
@@ -103,7 +103,7 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   margin-right: 10px;
-  font-family: 'Poppins', sans-serif; // Aplicar la tipografía
+  font-family: 'Poppins', sans-serif; 
 }
 
 .btn-secondary {

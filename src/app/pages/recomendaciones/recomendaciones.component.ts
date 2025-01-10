@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-recomendaciones',
-  standalone: true, // Indicar que es un componente independiente
-  imports: [CommonModule, RouterModule], // Añadir CommonModule y RouterModule a los imports
+  standalone: true, 
+  imports: [CommonModule, RouterModule], 
   templateUrl: './recomendaciones.component.html',
   styleUrls: ['./recomendaciones.component.scss']
 })
